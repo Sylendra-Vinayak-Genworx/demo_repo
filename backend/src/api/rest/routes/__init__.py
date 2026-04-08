@@ -1,3 +1,4 @@
-from .health import router as health_router
-from .sse import router as sse_router
-from .websocket import router as websocket_router
+from . import auth
+from . import health
+from . import sse
+from . import websocket

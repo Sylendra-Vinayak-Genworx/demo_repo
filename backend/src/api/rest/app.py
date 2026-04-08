@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from .routes import health, sse, websocket
+from .routes import auth, health, sse, websocket
 from ...middleware import cors as cors_middleware
 from ...middleware import error_handler
 from ...middleware import logging as logging_middleware
@@ -18,6 +18,7 @@ def create_app() -> FastAPI:
     app.include_router(health.router, prefix="/health", tags=["health"])
     app.include_router(sse.router, prefix="/events", tags=["sse"])
     app.include_router(websocket.router, prefix="/ws", tags=["websocket"])
+    app.include_router(auth.router, prefix="/auth", tags=["auth"])
 
     return app
 
