@@ -3,7 +3,7 @@ from passlib.context import CryptContext
 from ...data.repositories.user_repository import UserRepository, UserRecord
 from ...schemas.user import UserCreate
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
 
 
 def hash_password(password: str) -> str:

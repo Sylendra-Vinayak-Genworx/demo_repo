@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
 from .routes import auth, health, sse, websocket
-from ...middleware import cors as cors_middleware
-from ...middleware import error_handler
-from ...middleware import logging as logging_middleware
-from ...middleware import metrics as metrics_middleware
+from src.api.middleware import cors as cors_middleware
+from src.api.middleware import error_handler
+from src.api.middleware import logging as logging_middleware
+from src.api.middleware import metrics as metrics_middleware
 
 
 def create_app() -> FastAPI:
